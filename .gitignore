@@ -1,3 +1,5 @@
+# Ignore the Gradle wrapper JAR
 gradle/wrapper/gradle-wrapper.jar
 
+# Local data directory
 .data/
