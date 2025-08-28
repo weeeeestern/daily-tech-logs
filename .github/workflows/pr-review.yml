@@ -1,0 +1,33 @@
+name: PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get changed markdown files
+        id: changed
+        uses: tj-actions/changed-files@v42
+        with:
+          files: |
+            **/*.md
+
+      - name: Set FILES variable
+        run: |
+          FILES="${{ steps.changed.outputs.files }}"
+          echo "FILES=$FILES" >> $GITHUB_ENV
+
+      - name: Review with Gemini
+        if: ${{ env.FILES != '' }}
+        run: |
+          echo "Reviewing files with Gemini: $FILES"
+          gemini review $FILES
+
+      - name: No markdown files changed
+        if: ${{ env.FILES == '' }}
+        run: echo "No markdown files changed."
