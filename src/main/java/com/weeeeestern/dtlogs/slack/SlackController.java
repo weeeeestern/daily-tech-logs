@@ -1,5 +1,6 @@
 package com.weeeeestern.dtlogs.slack;
 
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -20,9 +21,11 @@ import com.weeeeestern.dtlogs.llm.GeminiClient;
 import com.weeeeestern.dtlogs.md.MarkdownService;
 import com.weeeeestern.dtlogs.search.TavilyClient;
 
+
 @RestController
 @RequestMapping("/slack")
 public class SlackController {
+
 
     private final QuestionDataset dataset;
     private final HistoryService historyService;
@@ -86,5 +89,6 @@ public class SlackController {
                                         @RequestParam("text") String category) {
         historyService.resetCategory(userId, category);
         return ResponseEntity.ok("초기화했습니다.");
+
     }
 }

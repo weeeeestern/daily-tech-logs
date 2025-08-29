@@ -1,5 +1,6 @@
 package com.weeeeestern.dtlogs.git;
 
+
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Map;
@@ -10,6 +11,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+
 
 @Component
 public class GitHubClient {
@@ -72,5 +74,6 @@ public class GitHubClient {
         restTemplate.postForEntity(
                 "https://api.github.com/repos/" + owner + "/" + repo + "/pulls",
                 new HttpEntity<>(prReq, headers), Map.class);
+
     }
 }

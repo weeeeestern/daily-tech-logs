@@ -1,5 +1,6 @@
 package com.weeeeestern.dtlogs.history;
 
+
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class HistoryService {
+
 
     private final QuestionHistoryRepository repository;
     private final Random random = new Random();
@@ -44,5 +46,6 @@ public class HistoryService {
 
     public void resetCategory(String userId, String category) {
         repository.deleteByUserIdAndCategory(userId, category);
+
     }
 }

@@ -1,5 +1,6 @@
 package com.weeeeestern.dtlogs.search;
 
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,8 +12,10 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+
 @Component
 public class TavilyClient {
+
 
     private final RestTemplate restTemplate = new RestTemplate();
     private final String apiKey;
@@ -51,5 +54,6 @@ public class TavilyClient {
         } catch (Exception e) {
             return "";
         }
+
     }
 }

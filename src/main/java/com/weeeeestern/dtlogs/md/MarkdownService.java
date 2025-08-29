@@ -1,5 +1,6 @@
 package com.weeeeestern.dtlogs.md;
 
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MarkdownService {
+
 
     public String render(LocalDate date, String category, String question, String keywords, String link,
                           String userConcept, String userOral, String userExpressions, String userReflection) {
@@ -40,5 +42,6 @@ public class MarkdownService {
         Path path = dir.resolve(String.format("%s-%s.md", date, category));
         Files.writeString(path, content, StandardCharsets.UTF_8);
         return path;
+
     }
 }
