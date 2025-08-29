@@ -1,0 +1,10 @@
+.env
+.data/
+build/
+target/
+out/
+logs/
+.gradle/
+*.iml
+gradle/wrapper/gradle-wrapper.jar
+gradlew.bat
