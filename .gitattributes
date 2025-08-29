@@ -1,0 +1,25 @@
+* text=auto
+*.java    text
+*.kt      text
+*.gradle  text
+*.yml     text
+*.yaml    text
+*.md      text
+*.json    text working-tree-encoding=UTF-8
+*.properties text
+*.sql     text
+
+# EOL policy
+*.sh   text eol=lf
+gradlew text eol=lf
+*.bat  text eol=crlf
+
+# binaries
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.jar binary
+*.class binary
+*.zip binary
